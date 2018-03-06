@@ -3,78 +3,124 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const db = require('./models')
 
-const port = process.env.PORT || 3030
+const port = process.env.PORT || 4001
 
 const app = express()
   .use(cors())
   .use(bodyParser.json())
 
-const { Player } = db
+const { User } = db
 
-app.get('/players', (req, res) => {
-  const players = Player
+//retrieving the doggy rank page
+app.get('/mydoggyrank', (req, res) => {
+  const mydoggyrank = myDoggyRank
     .findAll()
-    .then((players) => {
-      res.json(players)
+    .then((mydoggyrank) => {
+      res.json(mydoggyrank)
     })
     .catch((err) => {
       console.error(err)
       res.status(500)
-      res.json({ message: 'Oops! There was an error getting the players. Please try again' })
+      res.json({ message: 'Oops! There was an error getting your rank. Please try again' })
     })
 })
 
-app.get('/players/:id', (req, res) => {
-  const players = Player
+//retrieving all users
+app.get('/users', (req, res) => {
+  const users = Users
+    .findAll()
+    .then((users) => {
+      res.json(users)
+    })
+    .catch((err) => {
+      console.error(err)
+      res.status(500)
+      res.json({ message: 'Oops! There was an error retrieving the users. Please try again' })
+    })
+})
+
+//retrieving users with their id
+app.get('/users/:id', (req, res) => {
+  const users = Users
     .findById(req.params.id)
-    .then((player) => {
-      if (player) {
-        res.json(player)
+    .then((user) => {
+      if (user) {
+        res.json(user)
       } else {
         res.status(404)
-        res.json({ message: 'Player not found!' })
+        res.json({ message: 'User not found!' })
       }
     })
     .catch((err) => {
       console.error(err)
       res.status(500)
-      res.json({ message: 'Oops! There was an error getting the player. Please try again' })
+      res.json({ message: 'Oops! There was an error getting the user. Please try again' })
     })
 })
 
-app.patch('/players/:id', (req, res) => {
-  const players = Player
-    .findById(req.params.id)
-    .then((player) => {
-      if (player) {
-        player.score = req.body.score
-        player
-          .save()
-          .then((updatedPlayer) => {
-            res.json(updatedPlayer)
-          })
-          .catch((err) => {
-            res.status(422)
-            res.json({ message: err.message })
-          })
-      } else {
-        res.status(404)
-        res.json({ message: 'Player not found!' })
+//creating users
+app.post('/users', (req, res) => {
+  const user = req.body
+  console.log(user)
+
+  // insert the new data into our database
+  User.create(user).then(entity => {
+
+    // send back the 201 Created status and the entity
+    res.status(201).send(entity)
+  })
+
+})
+
+//updating user info
+const updateOrPatch = (req, res) => {
+  const userId = Number(req.params.id)
+  const updates = req.body
+
+  app.findById(req.params.id)
+    .then(entity => {
+      if (entity.userId !== req.user.id) {
+        res.status(403).send({
+          message: 'You\'re not allowed to edit this user!'
+        })
+      }
+      else {
+        return entity.update(updates)
       }
     })
-    .catch((err) => {
-      console.error(err)
-      res.status(500)
-      res.json({ message: 'Oops! There was an error getting the player. Please try again' })
+    .then(final => {
+      res.json(final)
+    })
+    .catch(error => {
+      res.status(500).send({
+        message: "Something went wrong",
+        error
+      })
+    })
+}
+
+app.put('/users/:id', updateOrPatch)
+app.patch('/users/:id', updateOrPatch)
+
+//delete
+app.delete('/users/:id', (req, res) => {
+  User.findById(req.params.id)
+    .then(entity => {
+      return entity.destroy()
+    })
+    .then(_ => {
+      res.send({
+        message: 'The user was deleted succesfully'
+      })
+    })
+    .catch(error => {
+      res.status(500).send({
+        message: 'Something went wrong',
+        error
+      })
     })
 })
 
 app.listen(port, () => {
-  console.log(`
-Server is listening on ${port}.
-
-Open http://localhost:${port}
-
-to see the app in your browser.
-    `)
+  console.log(`listening for incoming connections on http://localhost:${port}`)
 })
