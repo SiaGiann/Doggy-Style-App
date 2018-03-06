@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const db = require('./models')
 const axios = require('axios')
+const bcrypt = require('bcrypt') // password hashing function
 
 const port = process.env.PORT || 4001
 
@@ -113,21 +114,41 @@ app.get('/users/:id', (req, res) => {
 // Edit user action
 const patchOrPut = (req, res) => {
   User
-  .findById(req.params.id)
-  .then(user => {
-    return user.update(req.body)
-  })
-  .then(final => {
-    res.json(final)
-  })
-  .catch(err => {
-    res.status(500).send({ message: `something went wrong`, err })
-  })
+    .findById(req.params.id)
+    .then(user => {
+      return user.update(req.body)
+    })
+    .then(final => {
+      res.json(final)
+    })
+    .catch(err => {
+      res.status(500).send({ message: `something went wrong`, err })
+    })
 }
 
 app.put('/users/:id', patchOrPut)
 app.patch('/users/:id', patchOrPut)
 
+// register endpoint
+app.post('/register', (req, res) => {
+  const user = {
+    email: req.body.email,
+    password: bcrypt.hashSync(req.body.password, 10)
+  }
+
+  User
+    .create(user)
+    .then(entity => {
+      res.status(201)
+      res.json({
+        id: entity.id,
+        email: entity.email
+      })
+    })
+    .catch(err => {
+      res.status(500).send({ message: `something went wrong`, err })
+    })
+})
 // //retrieving the doggy rank page
 // app.get('/mydoggyrank', (req, res) => {
 //   const mydoggyrank = myDoggyRank
