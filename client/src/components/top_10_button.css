@@ -1,0 +1,15 @@
+.topTenButton {
+  padding: 1em;
+  width: 40%;
+  margin: 2em auto;
+  background-color: #F06F1E;
+  color: white;
+  text-align: center;
+  font-size: 2em;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.topTenButton:hover {
+  background-color: #E05F0E;
+}
