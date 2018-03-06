@@ -4,12 +4,12 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
       return queryInterface.bulkInsert('Dogs', [
         {
-          breed: 'Bulldog',
+          breed: 'bulldog',
           createdAt: 'NOW()',
           updatedAt: 'NOW()'
         },
         {
-          breed: 'Akita',
+          breed: 'akita',
           createdAt: 'NOW()',
           updatedAt: 'NOW()'
         }
