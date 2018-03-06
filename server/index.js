@@ -91,6 +91,43 @@ app.post('/votedown', (req, res) => {
   })
 })
 
+// retrieving users with their id
+app.get('/users/:id', (req, res) => {
+  User
+    .findById(req.params.id)
+    .then((user) => {
+      if (user) {
+        res.json(user)
+      } else {
+        res.status(404)
+        res.json({ message: 'User not found!' })
+      }
+    })
+    .catch((err) => {
+      console.error(err)
+      res.status(500)
+      res.json({ message: 'Oops! There was an error getting the user. Please try again' })
+    })
+})
+
+// Edit user action
+const patchOrPut = (req, res) => {
+  User
+  .findById(req.params.id)
+  .then(user => {
+    return user.update(req.body)
+  })
+  .then(final => {
+    res.json(final)
+  })
+  .catch(err => {
+    res.status(500).send({ message: `something went wrong`, err })
+  })
+}
+
+app.put('/users/:id', patchOrPut)
+app.patch('/users/:id', patchOrPut)
+
 // //retrieving the doggy rank page
 // app.get('/mydoggyrank', (req, res) => {
 //   const mydoggyrank = myDoggyRank
@@ -116,25 +153,6 @@ app.post('/votedown', (req, res) => {
 //       console.error(err)
 //       res.status(500)
 //       res.json({ message: 'Oops! There was an error retrieving the users. Please try again' })
-//     })
-// })
-//
-// //retrieving users with their id
-// app.get('/users/:id', (req, res) => {
-//   const users = Users
-//     .findById(req.params.id)
-//     .then((user) => {
-//       if (user) {
-//         res.json(user)
-//       } else {
-//         res.status(404)
-//         res.json({ message: 'User not found!' })
-//       }
-//     })
-//     .catch((err) => {
-//       console.error(err)
-//       res.status(500)
-//       res.json({ message: 'Oops! There was an error getting the user. Please try again' })
 //     })
 // })
 //
