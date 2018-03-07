@@ -9,8 +9,7 @@ const { Dog } = db
 // Vote up: finds or creates a dog by its breed name and returns its id
 // next using this dog id it finds or creates a points record which binds together the dog and the current user
 // then it updates this record by adding 5 points to the record's points
-// TODO: remember to remove the comment from require user for the front end
-router.post('/voteup', /*requireUser,*/ (req, res) => {
+router.post('/voteup', requireUser, (req, res) => {
   const { user_id, breed } = req.body
   Dog
   .findOrCreate({ // findorcreate returns an array of two elements
@@ -40,8 +39,7 @@ router.post('/voteup', /*requireUser,*/ (req, res) => {
 // Vote down: finds or creates a dog by its breed name and returns its id
 // next using this dog id it finds or creates a points record which binds together the dog and the current user
 // then it updates this record by subtracting 3 points to the record's points
-// TODO: remember to remove the comment from require user for the front end
-router.post('/votedown', /*requireUser,*/ (req, res) => {
+router.post('/votedown', requireUser, (req, res) => {
   const { user_id, breed } = req.body
   Dog
   .findOrCreate({ // findorcreate returns an array of two elements
