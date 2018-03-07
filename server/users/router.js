@@ -64,6 +64,7 @@ const patchOrPut = (req, res) => {
 router.put('/users/:id', patchOrPut)
 router.patch('/users/:id', patchOrPut)
 
+// TODO: remember to remove this action after connectin with front end
 router.get('/secret', requireUser, (req, res) => {
 	res.send({
 		message: `Welcome, you should be the user with email ${req.user.email}`
