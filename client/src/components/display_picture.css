@@ -1,0 +1,27 @@
+.imageBox {
+  width: auto;
+  height: 70vh;
+  margin: auto;
+  padding-top: 2em;
+}
+
+.dogImage {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  border-radius: 15px;
+}
+
+.buttonBox {
+  position: relative;
+  top: -10rem;
+  display: flex;
+  justify-content: center;
+  width: inherit;
+}
+
+.buttonBox img {
+  height: 8rem;
+  transition: all 0.5s;
+  padding: 1rem;
+}
