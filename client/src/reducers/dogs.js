@@ -1,4 +1,4 @@
-import {FETCH_DOG} from '../actions/types'
+import { FETCH_DOG } from '../actions/types'
 
 export default (state = {}, { type, payload } = {}) => {
   switch (type) {
