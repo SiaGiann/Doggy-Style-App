@@ -15,15 +15,15 @@ class Picture extends PureComponent {
   }
 
   componentWillMount() {
-    this.props.fetchDog(this.props.match.params.url)
+    this.props.fetchDog()
   }
 
   render() {
-    const { dogs } = this.props.fetchDog(this.props.match.params.url)
-    console.log(dogs)
+    const { dogs } = this.props
+    console.log(dogs[0])
     return (
       <div className="imageBox">
-        <img className="dogImage" src={ dogs } />
+        <img className="dogImage" src={ dogs[0] } />
         <div className="buttonBox">
           <Dislike />
           <Like handleClick={ dogVote }/>
