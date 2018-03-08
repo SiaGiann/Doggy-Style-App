@@ -1,5 +1,7 @@
-import Vote from './votecount'
+import vote from './votecount'
+import dogs from './dogs'
 
 export default {
-  Vote,
+  vote,
+  dogs,
 }

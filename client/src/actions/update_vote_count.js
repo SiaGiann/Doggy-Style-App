@@ -1,8 +1,11 @@
 import { VOTE_COUNT } from './types'
 
-export const dogVote = (choice) => {
+export const dogVote = (userID, dogBreed) => {
   return {
     type: VOTE_COUNT,
-    payload: choice
+    payload: {
+      userID,
+      dogBreed
+    }
   }
 }

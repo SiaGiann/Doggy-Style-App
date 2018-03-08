@@ -2,20 +2,17 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import './like.css'
 import LikeImg from './paw-good.png'
-import { connect } from 'react-redux'
-import { dogVote } from '../actions/update_vote_count'
-
 
 class Like extends PureComponent {
   static PropTypes = {
-    onClick: PropTypes.func.isRequired
+    handleClick: PropTypes.func.isRequired
   }
 
-  handleClick = (event) => {
-    // event.preventDefault();
-    this.props.dogVote(event.target.value);
-    // event.target.value = ''
-  }
+  // handleClick = (event) => {
+  //   // event.preventDefault();
+  //   this.props.dogVote();
+  //   // (event.target.value)
+  // }
 
 
 render() {
