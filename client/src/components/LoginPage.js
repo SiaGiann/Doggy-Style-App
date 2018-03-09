@@ -3,6 +3,8 @@ import {connect} from 'react-redux'
 import {login} from '../actions/users'
 import LoginForm from './LoginForm'
 import {Redirect} from 'react-router-dom'
+import './LoginPage.css';
+import LogoImg from './dog.png';
 
 class LoginPage extends PureComponent {
 	handleSubmit = (data) => {
@@ -15,10 +17,16 @@ class LoginPage extends PureComponent {
 		)
 
 		return (
-			<div>
-				<h1>Login</h1>
+			<div className="Page">
+        <header className="Header">
+          <img src={LogoImg} className="Logo" alt="logo" />
+          <h1 className="Title">Doggy Style</h1>
+        </header>
+				<div className="Login">
+					<h1>Login</h1>
 
-				<LoginForm onSubmit={this.handleSubmit} />
+					<LoginForm onSubmit={this.handleSubmit} />
+					</div>
 			</div>
 		)
 	}
