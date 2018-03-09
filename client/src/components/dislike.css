@@ -3,6 +3,9 @@
   width: auto;
   margin-right: 5%;
   transition: all 0.5s;
+  border: none;
+  outline: none;
+  background-color: transparent;
 }
 
 .dislikeButton:hover {

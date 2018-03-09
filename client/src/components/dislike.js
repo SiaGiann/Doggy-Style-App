@@ -20,9 +20,9 @@ class Dislike extends PureComponent {
 
 render() {
     return(
-      <div className="dislikeButton">
+      <button className="dislikeButton" onClick={ this.props.onClick }>
           <img src={ DislikeImg }/>
-      </div>
+      </button>
     );
   }
 }
