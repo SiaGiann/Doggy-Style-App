@@ -7,7 +7,7 @@ import './display_picture.css'
 import { dogVote } from '../actions/update_vote_count'
 import { connect } from 'react-redux'
 import { fetchDog } from '../actions/fetchDog'
-import {Link} from 'react-router-dom'
+
 
 
 class Picture extends PureComponent {
@@ -22,7 +22,7 @@ class Picture extends PureComponent {
   render() {
     const { dogs } = this.props
     console.log(dogs[0])
-    if (this.props.currentUser) { return (
+    return (
       <div className="imageBox">
         <img className="dogImage" src={ dogs[0] } />
         <div className="buttonBox">
@@ -30,10 +30,7 @@ class Picture extends PureComponent {
           <Like handleClick={ dogVote }/>
         </div>
       </div>
-    )}
-    else {
-      return <p>Please login</p>
-    }
+    )
   }
 }
 
@@ -45,7 +42,7 @@ Picture.defaultProps = {
 const mapStateToProps = function (state) {
   return {
     dogs: state.dogs,
-    currentUser: state.currentUser
+    // currentUser: state.currentUser
   }
 }
 

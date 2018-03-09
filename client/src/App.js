@@ -4,8 +4,8 @@ import './App.css';
 import Picture from './components/display_picture'
 import Button from './components/top_10_button'
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
-import '../components/LoginPage'
-import '../components/dog_vote'
+import LoginPage from './components/LoginPage'
+import dog_vote from './components/dog_vote'
 
 
 class App extends Component {

@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import LogoImg from './dog.png';
-import './App.css';
-import Picture from './components/display_picture'
-import Button from './components/top_10_button'
+import './dog_vote.css';
+import Picture from './display_picture'
+import Button from './top_10_button'
+import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 class dogSwipe extends Component {
   render() {
-    return (
+      if (this.props.currentUser) { return (
       <div className="App">
         <header className="App-header">
           <img src={LogoImg} className="App-logo" alt="logo" />
@@ -19,6 +21,12 @@ class dogSwipe extends Component {
       </div>
     );
   }
+    else {
+      return <p>Please <Link to="/login">login</Link></p>
+    }
+  }
 }
 
-export default dogSwipe
+const mapStateToProps = ({ currentUser }) => ({ currentUser })
+
+export default connect(mapStateToProps)(dogSwipe)
