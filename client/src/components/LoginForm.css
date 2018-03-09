@@ -16,4 +16,9 @@
 
 .Submit {
   margin: 25px;
+  font-size: 1.2em;
+}
+
+.Email, .Password {
+  padding-bottom: 20px;
 }

@@ -19,6 +19,7 @@ class Picture extends PureComponent {
     this.props.fetchDog()
   }
 
+
   render() {
     const { dogs } = this.props
     return (
@@ -26,16 +27,11 @@ class Picture extends PureComponent {
         <img className="dogImage" src={ dogs.url } />
         <div className="buttonBox">
           <Dislike />
-          <Like handleClick={ dogVote }/>
+          <Like />
         </div>
       </div>
     )
   }
-}
-
-
-Picture.defaultProps = {
-  image: imageUrl
 }
 
 const mapStateToProps = function (state) {
