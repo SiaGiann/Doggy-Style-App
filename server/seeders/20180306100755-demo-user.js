@@ -15,7 +15,7 @@ module.exports = {
       },
       {
         name: 'Arno Big-Daddy',
-        email: 'wouldyoubesokind@todo.com',
+        email: bcrypt.hashSync('wouldyoubesokind@todo.com', 10),
         password: 'a22345',
         photo: 'https://static1.codaisseur.com/uploads/team_member/avatar/17/foto_arno_fleming-square-150kb-png-85ad266f87546ac967c439aebc930908.png',
         bio: 'coder by day, rock god by night',
@@ -24,7 +24,7 @@ module.exports = {
       },
       {
         name: 'Matt Le-blanc',
-        email: 'howyoudoin@gmail.com',
+        email: bcrypt.hashSync('howyoudoin@gmail.com', 10),
         password: 'a23345',
         photo: 'https://static0.codaisseur.com/uploads/team_member/avatar/12/profile_bw-jpg-ce92e2012ac1ff86bbe1de301c0efc1c.png',
         bio: 'former member of the best tv show of all time, secretly canadian',
@@ -33,7 +33,7 @@ module.exports = {
       },
       {
         name: 'Mike vice-pence',
-        email: 'wherehaveallthegoodmengone@hotmail.com',
+        email: bcrypt.hashSync('wherehaveallthegoodmengone@hotmail.com', 10),
         password: 'a33345',
         photo: 'https://static3.codaisseur.com/uploads/team_member/avatar/14/mike-png-9e10d5b19707be5d7fdb7e8d360ba7e7.png',
         bio: 'in his spare time helps to run the US and A by babysitting',
@@ -42,7 +42,7 @@ module.exports = {
       },
       {
         name: 'Mimi Smith',
-        email: 'sugarspiceandeverythingnice@bubbles.com',
+        email: bcrypt.hashSync('sugarspiceandeverythingnice@bubbles.com', 10),
         password: 'a3333345',
         photo: 'https://i.pinimg.com/736x/21/d0/fd/21d0fd6deca94fcecff39b5bd0de4178--powerpuff-k%C4%B1zlar%C4%B1-the-powerpuff-girls.jpg',
         bio: 'a piece of sunshine plucked from the sun',
@@ -51,7 +51,7 @@ module.exports = {
       }
       {
         name: 'Michiel Reuter',
-        email: 'ilikelables@hotmail.nl',
+        email: bcrypt.hashSync('ilikelables@hotmail.nl', 10),
         password: 'a344345',
         photo: 'https://static3.codaisseur.com/uploads/team_member/avatar/14/mike-png-9e10d5b19707be5d7fdb7e8d360ba7e7.png',
         bio: 'if there is no label for it, it belong in the bin',
@@ -60,7 +60,7 @@ module.exports = {
       },
       {
         name: 'Wouter The-general',
-        email: 'coda4life@hotmail.nl',
+        email: bcrypt.hashSync('coda4life@hotmail.nl', 10),
         password: 'a3466345',
         photo: 'https://static1.codaisseur.com/uploads/team_member/avatar/1/codaisseur-portraits-27-jpg-cb64901ab564a35a59906130ff5970bf.png',
         bio: 'Follow the Reader, Reader, Reader, follow the Reader duh duh',
@@ -69,7 +69,7 @@ module.exports = {
       },
       {
         name: 'Rembert Here-comes-the-BOOM!',
-        email: 'dynamite123@hotmail.com',
+        email: bcrypt.hashSync('dynamite123@hotmail.com', 10),
         password: 'a3466345',
         photo: 'https://static4.codaisseur.com/uploads/team_member/avatar/2/rembert-jpg-ff131468e4fd1f90c44e1a9a9c9c9a16.png',
         bio: 'does my name sound like a cheese?... mmmm camembert',
@@ -78,7 +78,7 @@ module.exports = {
       },
       {
         name: 'Arien Clooney',
-        email: 'coolasacucumber@Oceans12.com',
+        email: bcrypt.hashSync('coolasacucumber@Oceans12.com', 10),
         password: 'a3466345',
         photo: 'https://avatars2.githubusercontent.com/u/2857600?s=460&v=4',
         bio: 'Mr. Cool, calm and collected',
@@ -87,7 +87,7 @@ module.exports = {
       },
       {
         name: 'Bob Smith',
-        email: 'Boring@gmail.come',
+        email: bcrypt.hashSync('Boring@gmail.come', 10),
         password: 'a34446345',
         photo: 'https://media.townhall.com/thm/resources/images/headshots/guybenson.jpg',
         bio: 'boring bob',
@@ -96,7 +96,7 @@ module.exports = {
       },
       {
         name: 'Mamma Si(t)a',
-        email: 'Iwannaswingfromthecandelier@gmail.come',
+        email: bcrypt.hashSync('Iwannaswingfromthecandelier@gmail.come', 10),
         password: 'a34446345',
         photo: 'https://ca.slack-edge.com/T0DK39WAJ-U92ACRL4A-bb60b44103f1-72',
         bio: 'Working Title',
@@ -105,7 +105,7 @@ module.exports = {
       },
       {
         name: 'Joep Simpson',
-        email: 'Dutchie4life@hotmail.it',
+        email: bcrypt.hashSync('Dutchie4life@hotmail.it', 10),
         password: 'a34446345',
         photo: 'https://ca.slack-edge.com/T0DK39WAJ-U93CJ3V2M-1c7ac7fa3c9f-72',
         bio: 'I love the login page!',
@@ -114,7 +114,7 @@ module.exports = {
       },
       {
         name: 'Julia TheRedDevil',
-        email: 'codingdeamon@gmail.com',
+        email: bcrypt.hashSync('codingdeamon@gmail.com', 10),
         password: 'a3aj46345',
         photo: 'https://ca.slack-edge.com/T0DK39WAJ-U93K8PRTL-7f96d583abdc-72',
         bio: 'Coding is the rythmn of my life',
@@ -123,7 +123,7 @@ module.exports = {
       },
       {
         name: 'Freddy Heineken',
-        email: 'greenteaismyblood@gmail.co.uk',
+        email: bcrypt.hashSync('greenteaismyblood@gmail.co.uk', 10),
         password: 'a3ayy6345',
         photo: 'https://ca.slack-edge.com/T0DK39WAJ-U97GFRR9S-7245d18d39d9-72',
         bio: 'Sigh',
