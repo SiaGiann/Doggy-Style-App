@@ -6,7 +6,7 @@ const baseUrl = 'http://localhost:4001'
 
 export const login = (email, password) => (dispatch) => {
 	request
-		.post(`${baseUrl}/logins`)
+		.get(`${baseUrl}/logins`)
     .send({ email, password })
     .then(result => {
       dispatch({

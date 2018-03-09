@@ -5,14 +5,15 @@ import Picture from './display_picture'
 import Button from './top_10_button'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import BouncerImg from './bouncer.jpeg'
 
 class dogSwipe extends Component {
   render() {
       if (this.props.currentUser) { return (
-      <div className="App">
-        <header className="App-header">
-          <img src={LogoImg} className="App-logo" alt="logo" />
-          <h1 className="App-title">Doggy Style</h1>
+      <div className="Page">
+        <header className="Header">
+          <img src={ LogoImg } className="Logo" alt="logo" />
+          <h1 className="Title">Doggy Style</h1>
         </header>
         <div className="Votes">
           <Picture />
@@ -22,8 +23,16 @@ class dogSwipe extends Component {
     );
   }
     else {
-      return <p>Please <Link to="/login">login</Link></p>
-    }
+      return (
+      <div className="Page">
+        <header className="Header">
+          <img src={LogoImg} className="Logo" alt="logo" />
+          <h1 className="Title">Doggy Style</h1>
+        </header>
+        <img className="Image" src={ BouncerImg } />
+        <p className="Link">Please <Link to="/login">dogin</Link>!</p>
+      </div>
+    )}
   }
 }
 

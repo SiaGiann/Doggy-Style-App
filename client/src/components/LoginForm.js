@@ -1,4 +1,5 @@
 import React, {PureComponent} from 'react'
+import './LoginForm.css'
 
 export default class LoginForm extends PureComponent {
 	state = {}
@@ -18,7 +19,7 @@ export default class LoginForm extends PureComponent {
 
 	render() {
 		return (
-			<form onSubmit={this.handleSubmit}>
+			<form className="Submit" onSubmit={this.handleSubmit}>
 				<div>
 					<label htmlFor="email">Email</label>
 					<input type="email" name="email" id="email" value={
@@ -33,7 +34,7 @@ export default class LoginForm extends PureComponent {
 					} onChange={ this.handleChange } />
 				</div>
 
-				<button type="submit">Login</button>
+				<button className="Button" type="submit">Login</button>
 			</form>
 		)
 	}
