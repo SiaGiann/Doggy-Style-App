@@ -1,0 +1,11 @@
+.dislikeButton {
+  cursor: pointer;
+  width: auto;
+  margin-right: 5%;
+  transition: all 0.5s;
+}
+
+.dislikeButton:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(5px 5px 5px #555);
+}

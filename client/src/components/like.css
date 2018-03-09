@@ -1,0 +1,11 @@
+.likeButton {
+  cursor: pointer;
+  width: auto;
+  margin-left: 5%;
+  transition: all 0.5s;
+}
+
+.likeButton:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(5px 5px 5px #555);
+}

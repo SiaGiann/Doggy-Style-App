@@ -1,0 +1,28 @@
+{
+  "name": "doggystyle",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon --inspect .",
+    "sequelize": "node_modules/.bin/sequelize"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.2.0",
+    "pg": "6",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.35.2",
+    "sequelize-cli": "^4.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.15.1"
+  },
+  "repository": "https://github.com/SiaGiann/Express-Project",
+  "author": "SiaGiann <siayiannaki@gmail.com>"
+}

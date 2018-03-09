@@ -1,0 +1,6 @@
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
+import Like from '../components/like'
+import Dislike from '../components/dislike'
+import Picture from '../components/display_picture'
+import { dogVote } from '../actions/update_vote_count'
