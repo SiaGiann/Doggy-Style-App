@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 // import { connect } from 'react-redux'
-// import Picture from './components/display_picture'
+// import Picture from './components/displayPicture'
 import './top_10_button.css'
 
 export class Button extends PureComponent {

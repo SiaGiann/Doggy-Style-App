@@ -26,6 +26,7 @@ app.use((req, res, next) => {
 })
 
 // returns a random dog image and its breed name
+
 app.get('/getdog', requireUser, (req, res) => { // requireUser means that you need to be loged in to have the action
   const dogApi = "https://dog.ceo"
   axios.get(dogApi+'/api/breeds/image/random')
