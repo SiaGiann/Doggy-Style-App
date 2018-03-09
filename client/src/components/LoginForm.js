@@ -7,6 +7,7 @@ export default class LoginForm extends PureComponent {
 	handleSubmit = (e) => {
 		e.preventDefault()
 		this.props.onSubmit(this.state)
+		console.log(this.state)
 	}
 
 	handleChange = (event) => {
@@ -34,7 +35,7 @@ export default class LoginForm extends PureComponent {
 					} onChange={ this.handleChange } />
 				</div>
 
-				<button className="Button" type="submit">Login</button>
+				<button className="Button" type="submit">Woof</button>
 			</form>
 		)
 	}

@@ -5,8 +5,9 @@ import { USER_LOGIN_SUCCESS } from './types'
 const baseUrl = 'http://localhost:4001'
 
 export const login = (email, password) => (dispatch) => {
+	console.log(email)
 	request
-		.get(`${baseUrl}/logins`)
+		.post(`${baseUrl}/logins`)
     .send({ email, password })
     .then(result => {
       dispatch({

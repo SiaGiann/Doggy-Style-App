@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import LogoImg from './dog.png';
 import './dog_vote.css';
-import Picture from './display_picture'
+import Picture from './displayPicture'
 import Button from './top_10_button'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'

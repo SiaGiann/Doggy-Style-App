@@ -9,6 +9,7 @@ import LogoImg from './dog.png';
 class LoginPage extends PureComponent {
 	handleSubmit = (data) => {
 		this.props.login(data.email, data.password)
+		console.log(data)
 	}
 
 	render() {
@@ -23,7 +24,7 @@ class LoginPage extends PureComponent {
           <h1 className="Title">Doggy Style</h1>
         </header>
 				<div className="Login">
-					<h1>Login</h1>
+					<h1>Dogin</h1>
 
 					<LoginForm onSubmit={this.handleSubmit} />
 					</div>
