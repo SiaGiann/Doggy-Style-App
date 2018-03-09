@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 })
 
 // returns a random dog image and its breed name
-app.get('/getdog', requireUser, (req, res) => { //to requireuser simenei oti prepei na eisai logarismenos gia na ginei to action
+app.get('/getdog', (req, res) => { //to requireuser simenei oti prepei na eisai logarismenos gia na ginei to action
   const dogApi = "https://dog.ceo"
   axios.get(dogApi+'/api/breeds/image/random')
     .then(function(response) {

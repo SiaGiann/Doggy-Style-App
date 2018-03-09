@@ -14,7 +14,7 @@ router.post('/logins', (req, res) => {
   	})
   	.then(entity => {
   		if (bcrypt.compareSync(req.body.password, entity.password)) {
-  			res.send({
+        res.send({
   				jwt: sign(entity.id)
   			})
   		}
