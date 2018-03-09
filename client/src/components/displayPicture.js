@@ -21,10 +21,9 @@ class Picture extends PureComponent {
 
   render() {
     const { dogs } = this.props
-    console.log(dogs[0])
     return (
       <div className="imageBox">
-        <img className="dogImage" src={ dogs[0] } />
+        <img className="dogImage" src={ dogs.url } />
         <div className="buttonBox">
           <Dislike />
           <Like handleClick={ dogVote }/>
