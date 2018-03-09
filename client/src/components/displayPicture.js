@@ -19,23 +19,22 @@ class Picture extends PureComponent {
     this.props.fetchDog()
   }
 
+  clickButton = () => {
+    this.props.fetchDog()
+  }
+
   render() {
     const { dogs } = this.props
     return (
       <div className="imageBox">
-        <img className="dogImage" src={ dogs.url } />
+        <img alt="dog" className="dogImage" src={ dogs.url } />
         <div className="buttonBox">
-          <Dislike />
-          <Like handleClick={ dogVote }/>
+          <Dislike onClick={ this.clickButton }/>
+          <Like onClick={ this.clickButton }/>
         </div>
       </div>
     )
   }
-}
-
-
-Picture.defaultProps = {
-  image: imageUrl
 }
 
 const mapStateToProps = function (state) {

@@ -17,9 +17,9 @@ class Like extends PureComponent {
 
 render() {
     return(
-      <div className="likeButton">
-          <img src={LikeImg} onClick={this.props.handleClick}/>
-      </div>
+      <button className="likeButton" onClick={ this.props.onClick }>
+          <img src={ LikeImg } />
+      </button>
     );
   }
 }
