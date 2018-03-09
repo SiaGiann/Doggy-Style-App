@@ -9,21 +9,22 @@ import { connect } from 'react-redux'
 import { fetchDog } from '../actions/fetchDog'
 
 
+
 class Picture extends PureComponent {
   static PropTypes = {
     dogs: PropTypes.string.isRequired
   }
 
   componentWillMount() {
-    this.props.fetchDog(this.props.match.params.url)
+    this.props.fetchDog()
   }
 
   render() {
-    const { dogs } = this.props.fetchDog(this.props.match.params.url)
-    console.log(dogs)
+    const { dogs } = this.props
+    console.log(dogs[0])
     return (
       <div className="imageBox">
-        <img className="dogImage" src={ dogs } />
+        <img className="dogImage" src={ dogs[0] } />
         <div className="buttonBox">
           <Dislike />
           <Like handleClick={ dogVote }/>
@@ -33,10 +34,18 @@ class Picture extends PureComponent {
   }
 }
 
+
 Picture.defaultProps = {
   image: imageUrl
 }
 
-const mapStateToProps = ({ dogs }) => ({ dogs })
+const mapStateToProps = function (state) {
+  return {
+    dogs: state.dogs,
+    // currentUser: state.currentUser
+  }
+}
+
+// const mapStateToProps = ({ dogs, currentUser }) => ({ dogs, currentUser })
 
 export default connect(mapStateToProps, { fetchDog })(Picture)
